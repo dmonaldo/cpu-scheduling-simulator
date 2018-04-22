@@ -16,7 +16,7 @@ using namespace std
 
 class Scheduler {
   public:
-    Scheduler(void);
+    Scheduler(string input);
     ~Scheduler(void);
     virtual void parseInputFile() = 0;
     virtual void runScheduler() = 0;
