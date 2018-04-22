@@ -26,6 +26,7 @@ class Scheduler {
     const double cpuUseQuery();
   
   protected:
+    void printProcess();
     vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;
@@ -36,6 +37,7 @@ class Scheduler {
     double cpuUsage;
     string inputFile;
     int pidCount;
+    int timeCounter;
     // struct {
     //   int pid;
     //   bool state;
