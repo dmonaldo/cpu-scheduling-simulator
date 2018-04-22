@@ -7,7 +7,7 @@
 
 using namespace std
 
-  struct{
+  struct processInfo{
   int pid;
   bool state;
   int arrival;
@@ -18,7 +18,7 @@ class Scheduler {
   public:
     Scheduler(string input);
     ~Scheduler(void);
-    virtual void parseInputFile() = 0;
+    virtual void parseInputFile();
     virtual void runScheduler() = 0;
     const double avgTurnaroundQuery();
     const double avgWaitQuery();
@@ -26,14 +26,16 @@ class Scheduler {
     const double cpuUseQuery();
   
   protected:
+    vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;
     vector<int> respTime;
     double avgResp;
     vector<int> turnTime;
     double avgTurn;
-    double cupUsage;
-  
+    double cpuUsage;
+    string inputFile;
+    int pidCount;
     // struct {
     //   int pid;
     //   bool state;
