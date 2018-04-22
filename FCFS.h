@@ -1,9 +1,9 @@
 #ifndef FCFS_H
 #define FCFS_H
 
-#include "shceduler.h"
+#include "Scheduler.h"
 
-class FCFS : public schedular
+class FCFS : public Scheduler
 {
 public:
 FCFS(string input) : scheduler(input);
