@@ -1,12 +1,12 @@
 #ifndef FCFS_H
 #define FCFS_H
 
-#include "Scheduler.h"
+#include "scheduler.h"
 
 class FCFS : public Scheduler
 {
-public:
-FCFS(string input) : scheduler(input);
-virtual void runScheduler();
+  public:
+    FCFS(string input) : scheduler(input);
+    virtual void runScheduler();
 };
 #endif
