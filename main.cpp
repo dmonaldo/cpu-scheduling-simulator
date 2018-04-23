@@ -1,7 +1,6 @@
 #include <iostream>
 
 using namespace std;
-enum scheAlgorithms {FCFS, RR, SRTF};
 
 int main(int argc, char *argv[]) {
   string inputFile;
@@ -23,16 +22,16 @@ int main(int argc, char *argv[]) {
   scheduler = argv[2];
 
   // Determine scheduler algorithm to run
-  if(scheduler == scheAlgorithms.FCFS){
+  if (scheduler == "FCFS") {
       cout << "Scheduling algorithm: " << scheduler << endl;
       // Initialize FCFS object here and then print out results
-    
+
   }
-  else if(scheduler == scheAlgorithms.RR){
+  else if (scheduler == "RR") {
       cout << "Scheduling algorithm: " << scheduler << endl;
       /*
       iss >> inputFile >> scheduler >> timeQuantum;
-      
+
       */
       if (argc < 4) {
         cout << "You are missing the time quantum argument." << endl;
@@ -42,16 +41,13 @@ int main(int argc, char *argv[]) {
       }
       // Initialize RR object here and then print out result
   }
-  else if(scheduler == scheAlgorithms.SRTF){
+  else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;
-      // Initialize SRTF object here and then print out results 
+      // Initialize SRTF object here and then print out results
   }
-  else{
+  else {
       cout << "Invalid scheduler name. Exiting program..." << endl;
   }
-    return 0;
-  }
-
 
   return 0;
 }
