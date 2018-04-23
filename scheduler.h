@@ -4,31 +4,33 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
-using namespace std
+using namespace std;
 
-  struct processInfo{
+struct processInfo {
   int pid;
   bool state;
   int arrival;
   int burst;
-}
+};
 
 class Scheduler {
   public:
     Scheduler(string input);
     ~Scheduler(void);
-    virtual void parseInputFile();
+    virtual void parseInputFile() = 0;
     virtual void runScheduler() = 0; //bool?
+    virtual void printRunProcess(int numPro) = 0;
     void printResults();
-    
+
     const double cpuUseQuery();
-  
+
   protected:
     virtual double avgTurnaroundQuery() = 0;
     virtual double avgWaitQuery() = 0;
     virtual double avgRespQuery() = 0;
-    void printCurrProcess();
+    void printProcess();
     vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;
@@ -40,10 +42,7 @@ class Scheduler {
     string inputFile;
     int pidCount;
     int timeCounter;
-    // struct {
-    //   int pid;
-    //   bool state;
-    //   int arrival;
-    //   int burst;
-    // }
-}
+
+};
+
+#endif
