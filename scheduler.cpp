@@ -28,6 +28,8 @@
     cout << " Total " << pidCount << " tasks are read from \"input\"."
      << "Press \'enter\' to start...";
     cin.ingore();
+    cout << "========================================================"
+     << "==========" << endl; 
  }
 void Scheduler::printRunProcess(int numPro)
 {
@@ -36,8 +38,12 @@ void Scheduler::printRunProcess(int numPro)
 }
 void Scheduler::printProcess()
 {
- cout << "CPU usage : " << << endl;
+ cout << "========================================================"
+     << "==========" << endl; 
+ //cout << "CPU usage : " << << endl;
  cout << "Average wait time : " << avgWaitQuery() << endl;
  cout << "Average resopnse time : " << avgRespTime() << endl;
  cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
+ cout << "========================================================"
+     << "==========" << endl; 
 }
