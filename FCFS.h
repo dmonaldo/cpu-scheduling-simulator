@@ -6,7 +6,7 @@
 class FCFS : public Scheduler
 {
   public:
-    FCFS(string input) : scheduler(input);
+    FCFS(string input) : Scheduler(input);
     virtual void runScheduler();
 };
 #endif

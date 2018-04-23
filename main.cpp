@@ -23,13 +23,12 @@ int main(int argc, char *argv[]) {
   scheduler = argv[2];
 
   // Determine scheduler algorithm to run
-  switch(scheduler)
-  {
-    case scheAlgorithms.FCFS:
+  if(scheduler == scheAlgorithms.FCFS){
       cout << "Scheduling algorithm: " << scheduler << endl;
       // Initialize FCFS object here and then print out results
-      break;
-    case scheAlgorithms.RR:
+    
+  }
+  else if(scheduler == scheAlgorithms.RR){
       cout << "Scheduling algorithm: " << scheduler << endl;
       /*
       iss >> inputFile >> scheduler >> timeQuantum;
@@ -41,14 +40,15 @@ int main(int argc, char *argv[]) {
       } else {
         timeQuantum = atoi(argv[3]);
       }
-      // Initialize RR object here and then print out results
-      break;
-    case scheAlgorithms.SRTF:
+      // Initialize RR object here and then print out result
+  }
+  else if(scheduler == scheAlgorithms.SRTF){
       cout << "Scheduling algorithm: " << scheduler << endl;
       // Initialize SRTF object here and then print out results 
-      break;
-    default:
+  }
+  else{
       cout << "Invalid scheduler name. Exiting program..." << endl;
+  }
     return 0;
   }
 
