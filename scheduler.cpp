@@ -1,6 +1,6 @@
 #include "scheduler.h"
  
- scheduler::Scheduler(string input)
+ Scheduler::Scheduler(string input)
  {
     inputFile = input;
     avgTurn = 0;
@@ -9,7 +9,7 @@
     cpuUsage = 0;
     pidCount = 0;
  }
- virtual void scheduler::parseInputFile()
+ virtual void Scheduler::parseInputFile()
  {
     ifstream inFile;
     int pidVal;
@@ -25,4 +25,19 @@
         pidCount++;
     }
     inFile.close();
+    cout << " Total " << pidCount << " tasks are read from \"input\"."
+     << "Press \'enter\' to start...";
+    cin.ingore();
  }
+void Scheduler::printRunProcess(int numPro)
+{
+ cout << "<system Time " << timeCounter << "> process " 
+  << numPro << " is running" << endl;
+}
+void Scheduler::printProcess()
+{
+ cout << "CPU usage : " << << endl;
+ cout << "Average wait time : " << avgWaitQuery() << endl;
+ cout << "Average resopnse time : " << avgRespTime() << endl;
+ cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
+}
