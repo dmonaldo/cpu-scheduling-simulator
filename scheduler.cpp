@@ -15,7 +15,9 @@
     int pidVal;
     int timeVal;
     int burstVal;
-    
+  
+    inFile.open(inputFile);
+  
     if(inFile.fail())
         return;
     while(inFile >> pidVal >> timeVal >> burstVal){
