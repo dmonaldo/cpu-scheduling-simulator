@@ -19,9 +19,9 @@ class Scheduler {
   public:
     Scheduler(string input);
     ~Scheduler(void);
-    virtual void parseInputFile() = 0;
+    void parseInputFile();
     virtual void runScheduler() = 0; //bool?
-    virtual void printRunProcess(int numPro) = 0;
+    void printRunProcess(int numPro);
     void printResults();
 
     const double cpuUseQuery();

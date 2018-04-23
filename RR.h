@@ -3,10 +3,12 @@
 
 #include "scheduler.h"
 
-class RR : public Scheduler
-{
+using namespace std;
+
+class RR : public Scheduler {
   public:
     RR(string input);
+    ~RR(void);
     void runScheduler();
 
   protected:

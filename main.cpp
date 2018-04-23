@@ -1,4 +1,6 @@
 #include <iostream>
+// #include "scheduler.h"
+#include "RR.h"
 
 using namespace std;
 
@@ -40,6 +42,9 @@ int main(int argc, char *argv[]) {
         timeQuantum = atoi(argv[3]);
       }
       // Initialize RR object here and then print out result
+
+      // Initialization isn't working
+      RR myRR(inputFile);
   }
   else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;
