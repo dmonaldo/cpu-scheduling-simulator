@@ -38,12 +38,12 @@ void Scheduler::printRunProcess(int numPro) {
     << numPro << " is running" << endl;
 }
 
-void Scheduler::printProcess() {
+void Scheduler::printProcessResult() {
   cout << "========================================================"
      << "==========" << endl;
   //cout << "CPU usage : " << << endl;
   cout << "Average wait time : " << avgWaitQuery() << endl;
-  // cout << "Average resopnse time : " << avgRespTime() << endl;
+  cout << "Average resopnse time : " << avgRespQuery() << endl;
   cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
   cout << "========================================================"
      << "==========" << endl;
