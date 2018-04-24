@@ -42,11 +42,11 @@ int main(int argc, char *argv[]) {
       } else {
         timeQuantum = atoi(argv[3]);
       }
-      // Initialize RR object here and then print out result
 
-      // Initialization isn't working
-      RR myRR(inputFile, timeQuantum);
-      myRR.runScheduler();
+      // Run RR Process
+      RR RRobj(inputFile, timeQuantum);
+      RRobj.runScheduler();
+      RRobj.printProcessResult();
   }
   else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;

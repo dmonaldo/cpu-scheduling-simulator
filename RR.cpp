@@ -16,6 +16,7 @@ void RR::runScheduler() {
       if (process[i].arrival <= timeCounter) {
         for (int j = 0; j < timeQuantum; j++) {
           timeCounter++;
+          burstCounter++;
           process[i].burst--;
           printRunProcess(process[i].pid);
 
@@ -27,10 +28,14 @@ void RR::runScheduler() {
           }
         }
       } else {
-        // timeCounter++;
+        timeCounter++;
       }
     }
   }
+}
+
+double RR::cpuUsageQuery() {
+  return ((double)burstCounter / (double)timeCounter)*100;
 }
 
 double RR::avgRespQuery() {

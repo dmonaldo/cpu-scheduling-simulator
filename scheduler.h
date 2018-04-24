@@ -29,6 +29,7 @@ class Scheduler {
     virtual double avgTurnaroundQuery() = 0;
     virtual double avgWaitQuery() = 0;
     virtual double avgRespQuery() = 0;
+    virtual double cpuUsageQuery() = 0;
     void printRunProcess(int numPro);
     void printCompleteProcess(int numPro);
 
@@ -43,6 +44,7 @@ class Scheduler {
     string inputFile;
     int pidCount;
     int timeCounter;
+    int burstCounter;
 
 };
 
