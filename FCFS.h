@@ -8,5 +8,9 @@ class FCFS : public Scheduler
   public:
     FCFS(string input) : Scheduler(input);
     virtual void runScheduler();
+    protected:
+    virtual double avgWaitQuery();
+    virtual double avgRespQuery();
+    virtual double avgTurnaroundQuery();
 };
 #endif
