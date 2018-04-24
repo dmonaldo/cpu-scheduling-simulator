@@ -20,9 +20,12 @@ void Scheduler::parseInputFile() {
   if(inFile.fail())
     return;
   while(inFile >> pidVal >> timeVal >> burstVal) {
-    process[pidCount].pid = pidVal;
-    process[pidCount].arrival = timeVal;
-    process[pidCount].burst = burstVal;
+    process.pid.push_back(pidVal);
+    process.arrival.push_back(timeVal);
+    process.burst.push_back(burstVal);
+    //process[pidCount].pid = pidVal;
+    //process[pidCount].arrival = timeVal;
+    //process[pidCount].burst = burstVal;
     pidCount++;
   }
   inFile.close();
