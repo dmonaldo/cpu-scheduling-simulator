@@ -1,14 +1,14 @@
 #include "SRTF.h"
 
-virtual void SRTF::runScheduler()
+void SRTF::runScheduler()
 {
 }
-virtual double SRTF::avgRespQuery()
+double SRTF::avgRespQuery()
 {
 }
-virtual double SRTF::avgWaitQuery()
+double SRTF::avgWaitQuery()
 {
 }
-virtual double avgTurnaroundQuery()
+double SRTF::avgTurnaroundQuery()
 {
 }
