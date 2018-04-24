@@ -7,6 +7,7 @@ class SRTF: public Scheduler
 {
 public: 
 SRTF(string input) : Schedluer(input);
+~SRTF(){};
 void runScheduler();
 protected:
 double avgRespQuery();
