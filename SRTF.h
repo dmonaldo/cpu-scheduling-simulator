@@ -7,11 +7,10 @@ class SRTF: public Scheduler
 {
 public: 
 SRTF(string input) : Schedluer(input);
-virtual void run scheduler();
+void runScheduler();
 protected:
-virtual double avgRespQuery();
-virtual double avgWaitQuery();
-virtual double avgTurnaroundQuery();
-
+double avgRespQuery();
+double avgWaitQuery();
+double avgTurnaroundQuery();
 };
 #endif
