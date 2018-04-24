@@ -7,11 +7,13 @@ class SRTF: public Scheduler
 {
 public: 
 SRTF(string input) : Schedluer(input);
-virtual void run scheduler();
+~SRTF(){};
+void runScheduler();
 protected:
-virtual double avgRespQuery();
-virtual double avgWaitQuery();
-virtual double avgTurnaroundQuery();
-
+double avgRespQuery();
+double avgWaitQuery();
+double avgTurnaroundQuery();
+private:
+static const int MAX = 1000000;
 };
 #endif

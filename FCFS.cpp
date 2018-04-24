@@ -1,6 +1,6 @@
 #include "FCFS.h"
 
-virtual void FSFC::runScheduler()
+void FSFC::runScheduler()
 {
   parseInputFile();
   
@@ -12,12 +12,12 @@ virtual void FSFC::runScheduler()
     cout << "<system time " << timeCounter << "> process " 
       << i++ << "is finished running... " << endl;
 }
-virtual double FCFS::avgRespQuery()
+double FCFS::avgRespQuery()
 {
   avgResp = avgWaitQuery();
   return avgResp;
 }
-virtual double FSFC::avgWaitQuery()
+double FSFC::avgWaitQuery()
 {
   vector<int> tempStart;
   tempStart[0] = process[0].arrival;
@@ -31,7 +31,7 @@ virtual double FSFC::avgWaitQuery()
   avgWait \= pidCount++;
   return avgWait;
 }
-virtual double FSFC::avgTurnaroundQuery()
+double FSFC::avgTurnaroundQuery()
 {
   int tempBurst = 0;
   int tempTurn = 0;

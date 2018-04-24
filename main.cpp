@@ -1,5 +1,5 @@
 #include <iostream>
-// #include "scheduler.h"
+#include "scheduler.h"
 #include "RR.h"
 
 using namespace std;

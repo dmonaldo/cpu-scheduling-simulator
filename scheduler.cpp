@@ -19,12 +19,22 @@ void Scheduler::parseInputFile() {
 
   if(inFile.fail())
     return;
+<<<<<<< HEAD
   while(inFile >> pidVal >> arrivalVal >> burstVal) {
     cout << process.size() << endl;
     process.push_back(processInfo());
     process.at(process.size()).pid = pidVal;
     process.at(process.size()).arrival = arrivalVal;
     process.at(process.size()).burst = burstVal;
+=======
+  while(inFile >> pidVal >> timeVal >> burstVal) {
+    process.pid.push_back(pidVal);
+    process.arrival.push_back(timeVal);
+    process.burst.push_back(burstVal);
+    //process[pidCount].pid = pidVal;
+    //process[pidCount].arrival = timeVal;
+    //process[pidCount].burst = burstVal;
+>>>>>>> ca0f40edef0cf0dabb8b49610db92e4cc9da9c60
     pidCount++;
   }
   inFile.close();
@@ -40,6 +50,7 @@ void Scheduler::printRunProcess(int numPro) {
     << numPro << " is running" << endl;
 }
 
+<<<<<<< HEAD
 // void Scheduler::printProcessResult() {
 //   cout << "========================================================"
 //      << "==========" << endl;
@@ -50,3 +61,15 @@ void Scheduler::printRunProcess(int numPro) {
 //   cout << "========================================================"
 //      << "==========" << endl;
 // }
+=======
+void Scheduler::printProcessResult() {
+  cout << "========================================================"
+     << "==========" << endl;
+  //cout << "CPU usage : " << << endl;
+  cout << "Average wait time : " << avgWaitQuery() << endl;
+  cout << "Average resopnse time : " << avgRespQuery() << endl;
+  cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
+  cout << "========================================================"
+     << "==========" << endl;
+}
+>>>>>>> ca0f40edef0cf0dabb8b49610db92e4cc9da9c60
