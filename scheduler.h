@@ -30,11 +30,7 @@ class Scheduler {
     virtual double avgWaitQuery() = 0;
     virtual double avgRespQuery() = 0;
     void printRunProcess(int numPro);
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> ca0f40edef0cf0dabb8b49610db92e4cc9da9c60
     vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;
