@@ -24,7 +24,7 @@ class Scheduler {
     void printRunProcess(int numPro);
     void printResults();
 
-    const double cpuUseQuery();
+    //const double cpuUseQuery();
 
   protected:
     virtual double avgTurnaroundQuery() = 0;
