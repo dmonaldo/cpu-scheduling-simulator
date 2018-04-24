@@ -23,9 +23,9 @@ void Scheduler::parseInputFile() {
   while(inFile >> pidVal >> arrivalVal >> burstVal) {
     cout << process.size() << endl;
     process.push_back(processInfo());
-    process.at(process.size()).pid = pidVal;
-    process.at(process.size()).arrival = arrivalVal;
-    process.at(process.size()).burst = burstVal;
+    process.at(pidCount).pid = pidVal;
+    process.at(pidCount).arrival = arrivalVal;
+    process.at(pidCount).burst = burstVal;
     pidCount++;
   }
 
@@ -42,7 +42,6 @@ void Scheduler::printRunProcess(int numPro) {
     << numPro << " is running" << endl;
 }
 
-<<<<<<< HEAD
 // void Scheduler::printProcessResult() {
 //   cout << "========================================================"
 //      << "==========" << endl;
@@ -53,15 +52,3 @@ void Scheduler::printRunProcess(int numPro) {
 //   cout << "========================================================"
 //      << "==========" << endl;
 // }
-=======
-void Scheduler::printProcessResult() {
-  cout << "========================================================"
-     << "==========" << endl;
-  //cout << "CPU usage : " << << endl;
-  cout << "Average wait time : " << avgWaitQuery() << endl;
-  cout << "Average resopnse time : " << avgRespQuery() << endl;
-  cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
-  cout << "========================================================"
-     << "==========" << endl;
-}
->>>>>>> ca0f40edef0cf0dabb8b49610db92e4cc9da9c60
