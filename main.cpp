@@ -1,6 +1,7 @@
 #include <iostream>
 #include "scheduler.h"
 #include "RR.h"
+#include "stdlib.h"
 
 using namespace std;
 
@@ -45,6 +46,7 @@ int main(int argc, char *argv[]) {
 
       // Initialization isn't working
       RR myRR(inputFile, timeQuantum);
+      myRR.runScheduler();
   }
   else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;

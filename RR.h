@@ -1,5 +1,5 @@
-#ifndef FCFS_H
-#define FCFS_H
+#ifndef RR_H
+#define RR_H
 
 #include "scheduler.h"
 

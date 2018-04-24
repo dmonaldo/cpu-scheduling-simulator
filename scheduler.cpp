@@ -15,31 +15,39 @@ void Scheduler::parseInputFile() {
   int arrivalVal;
   int burstVal;
 
-  inFile.open(inputFile);
+  inFile.open(inputFile.c_str());
 
   if (inFile.fail())
     return;
 
-  while(inFile >> pidVal >> arrivalVal >> burstVal) {
-    cout << process.size() << endl;
-    process.push_back(processInfo());
-    process.at(pidCount).pid = pidVal;
-    process.at(pidCount).arrival = arrivalVal;
-    process.at(pidCount).burst = burstVal;
+  // Read process values from file and store vector
+  while (inFile >> pidVal >> arrivalVal >> burstVal) {
+    processInfo tempProcess = {
+      pidVal,
+      true,
+      arrivalVal,
+      burstVal
+    };
+    process.push_back(tempProcess);
     pidCount++;
   }
 
   inFile.close();
-  cout << " Total " << pidCount << " tasks are read from \"input\"."
-    << "Press \'enter\' to start...";
+
+  cout << "Total " << pidCount << " tasks are read from "
+      << inputFile << ". Press 'enter' to start..."
+      << "==========================================" << endl;
   cin.ignore();
-  cout << "========================================================"
-    << "==========" << endl;
 }
 
 void Scheduler::printRunProcess(int numPro) {
-  cout << "<system Time " << timeCounter << "> process "
+  cout << "<system time " << timeCounter << "> process "
     << numPro << " is running" << endl;
+}
+
+void Scheduler::printCompleteProcess(int numPro) {
+  cout << "<system time " << timeCounter << "> process "
+    << numPro << " is finished..." << endl;
 }
 
 // void Scheduler::printProcessResult() {
