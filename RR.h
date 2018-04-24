@@ -7,7 +7,7 @@ using namespace std;
 
 class RR : public Scheduler {
   public:
-    RR(string input);
+    RR(string input): Scheduler(input){}; //quantum value?
     ~RR(void);
     void runScheduler();
 
