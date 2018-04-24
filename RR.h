@@ -7,13 +7,14 @@ using namespace std;
 
 class RR : public Scheduler {
   public:
-    RR(string input);
-    ~RR(void);
+    RR(string input, int quantum);
+    // ~RR(void);
     void runScheduler();
 
   protected:
     double avgRespQuery();
     double avgWaitQuery();
     double avgTurnaroundQuery();
+    int timeQuantum;
 };
 #endif

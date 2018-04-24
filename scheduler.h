@@ -18,19 +18,19 @@ struct processInfo {
 class Scheduler {
   public:
     Scheduler(string input);
-    ~Scheduler(void);
+    ~Scheduler(void){};
     void parseInputFile();
     virtual void runScheduler() = 0; //bool?
-    void printRunProcess(int numPro);
-    void printResults();
+    void printProcessResult();
 
-    const double cpuUseQuery();
+    //const double cpuUseQuery();
 
   protected:
     virtual double avgTurnaroundQuery() = 0;
     virtual double avgWaitQuery() = 0;
     virtual double avgRespQuery() = 0;
-    void printProcess();
+    void printRunProcess(int numPro);
+
     vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;

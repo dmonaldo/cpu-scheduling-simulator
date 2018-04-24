@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
       // Initialize RR object here and then print out result
 
       // Initialization isn't working
-      RR myRR(inputFile);
+      RR myRR(inputFile, timeQuantum);
   }
   else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;

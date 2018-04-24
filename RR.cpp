@@ -1,15 +1,38 @@
 #include "RR.h"
 
-void RR::runScheduler() {
+RR::RR(string input, int quantum) : Scheduler(input) {
+  timeQuantum = quantum;
+  cout << timeQuantum << endl;
   parseInputFile();
+}
 
-  for (int i = 0; i < pidCount; i++) {
-    for (int j = 0; j < process[i].burst; j++) {
-      timeCounter++;
-      printRunProcess(i++);
+// RR::~RR(void) {
+//
+// }
+
+void RR::runScheduler() {
+  cout << "Running";
+  while(process.size() > 0) {
+    for (int i = 0; i < pidCount; i++) {
+      // Run process if arrival time is after current CPU time
+      if (process[i].arrival <= timeCounter) {
+        for (int j = 0; j < timeQuantum; j++) {
+          timeCounter++;
+          process[i].burst--;
+          printRunProcess(process[i].pid);
+
+          // Remove process from vector if completed
+          if (process[i].burst <= 0) {
+            cout << "Process complete " << process[i].pid << endl;
+            // printCompleteProcess(process[i].pid)
+            process.erase(process.begin() + i);
+            break;
+          }
+        }
+      } else {
+        // timeCounter++;
+      }
     }
-    cout << "<system time " << timeCounter << "> process "
-      << i++ << "is finished running... " << endl;
   }
 }
 
