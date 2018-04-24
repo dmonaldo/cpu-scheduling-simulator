@@ -13,5 +13,7 @@ protected:
 double avgRespQuery();
 double avgWaitQuery();
 double avgTurnaroundQuery();
+private:
+static const int MAX = 1000000;
 };
 #endif
