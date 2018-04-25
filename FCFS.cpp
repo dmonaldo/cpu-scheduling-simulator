@@ -1,37 +1,37 @@
+//AUTHORS: Alex Runciman
+//FILENAME: FCFS.cpp
+//DESCRIPTION: Implementation of functions declared in FCFS.h
+
 #include "FCFS.h"
 
-void FSFC::runScheduler()
+void FCFS::runScheduler()
 {
   parseInputFile();
-  
+  waitTime.push_back(0);
   for(int i = 0 i < pidCount; i++){
     for(int j = 0; j < process[i].burst; j++){
+      printRunProcess(i+INC);
       timeCounter++;
-      printRunProcess(i++);
     }
+    waitTime.push_back(timeCounter);
     cout << "<system time " << timeCounter << "> process " 
-      << i++ << "is finished running... " << endl;
+      << (i+INC) << "is finished running... " << endl;
 }
 double FCFS::avgRespQuery()
 {
   avgResp = avgWaitQuery();
   return avgResp;
 }
-double FSFC::avgWaitQuery()
+double FCFS::avgWaitQuery()
 {
-  vector<int> tempStart;
-  tempStart[0] = process[0].arrival;
-  for(int i = 1, j = 0; i < pidCount; i++, j++){
-      tempStart[i] = tempStart[j] + process[j].burst;
-  }
+  avgWait = 0;
   for(int i = 0; i < pidCount; i++){
-    wait[i] = tempStart[i] - process[i].arrival;
-    avgWait += wait[i];
+    avgWait += (waitTime[i]-process[i].arrival);
   }
-  avgWait \= pidCount++;
+  avgWait = avgWait/pidCount;
   return avgWait;
 }
-double FSFC::avgTurnaroundQuery()
+double FCFS::avgTurnaroundQuery()
 {
   int tempBurst = 0;
   int tempTurn = 0;
@@ -40,8 +40,18 @@ double FSFC::avgTurnaroundQuery()
     tempTurn = tempBurst - process[i].arrival;
     avgTurn += tempTurn;
   }
-  avgTurn /= pidCount++;
+  avgTurn = avgTurn/pidCount;
   return avgTurn;
 }
+double FCFS::cpuUseQuery()
+{
+  double totBurst = 0;
+  for(int i = 0; i < pidCount; i++){
+     totBurst += process[i].burst;
+  }
+  totBurst = (totBurst/timeCounter) * PERCENT;
+  return totBurst;
+}
+
   
 
