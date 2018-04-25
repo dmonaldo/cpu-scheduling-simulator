@@ -11,18 +11,24 @@
 
 #include "scheduler.h"
 
-using namespace std;
-
 class RR : public Scheduler {
   public:
     RR(string input, int quantum);
     void runScheduler();
 
   protected:
+    // Returns the average response time
     double avgRespQuery();
+
+    // Returns the average wait time
     double avgWaitQuery();
+
+    // Returns the average turnaround time
     double avgTurnaroundQuery();
+
+    // Returns the CPU usage in percentage form
     double cpuUseQuery();
+
     int timeQuantum;
 };
 #endif

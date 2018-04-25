@@ -51,7 +51,6 @@ class Scheduler {
     int burstCounter;
 
     static const int INC = 1;
-    // static const double PERCENT = 100;
 };
 
 #endif

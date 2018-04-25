@@ -11,8 +11,6 @@
 
 #include "scheduler.h"
 
-using namespace std;
-
 class FCFS : public virtual Scheduler {
   public:
     // Constructor
