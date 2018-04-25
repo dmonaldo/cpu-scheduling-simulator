@@ -16,7 +16,7 @@ RR::RR(string input, int quantum) : Scheduler(input) {
 void RR::runScheduler() {
   bool allProcessesComplete = false;
   while (!allProcessesComplete) {
-    for (int i = 0; i < process.size(); i++) {
+    for (unsigned i = 0; i < process.size(); i++) {
       // Run process if arrival time is after current CPU time
       // and if the process has not been completed yet
       if (process[i].arrival <= timeCounter && process[i].state) {
@@ -40,7 +40,7 @@ void RR::runScheduler() {
     // Check if all processes have completed or are idle
     bool completed = true;
     bool idle = false;
-    for (int i = 0; i < process.size(); i++) {
+    for (unsigned i = 0; i < process.size(); i++) {
       if (process[i].state) {
         completed = false;
       }
