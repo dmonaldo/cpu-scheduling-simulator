@@ -7,7 +7,7 @@
 class SRTF: public virtual Scheduler
 {
 public: 
-SRTF(string input) : Schedluer(input){};
+SRTF(string input) : Scheduler(input){};
 ~SRTF(){};
 void runScheduler();
 protected:
