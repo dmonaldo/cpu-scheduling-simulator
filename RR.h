@@ -1,3 +1,11 @@
+/*
+  AUTHORS: Dante Monaldo
+  FILEFAME: RR.h
+  DESCRIPTION: This class is designed to run a RR simulator and print the
+                results for the average wait time, average response time, average
+                turn around time, and the cpu usage.
+*/
+
 #ifndef RR_H
 #define RR_H
 
@@ -8,7 +16,6 @@ using namespace std;
 class RR : public Scheduler {
   public:
     RR(string input, int quantum);
-    // ~RR(void);
     void runScheduler();
 
   protected:

@@ -1,3 +1,9 @@
+/*
+  AUTHORS: Dante Monaldo
+  FILENAME: RR.cpp
+  DESCRIPTION: Implementation of functions declared in RR.h
+*/
+
 #include "RR.h"
 
 // Constructor
@@ -53,11 +59,6 @@ void RR::runScheduler() {
   }
 }
 
-// Returns the CPU usage in percentage form
-double RR::cpuUseQuery() {
-  return ((double)burstCounter / (double)timeCounter) * 100;
-}
-
 // Returns the average response time
 double RR::avgRespQuery() {
   double sum = 0;
@@ -83,4 +84,9 @@ double RR::avgTurnaroundQuery() {
     sum += process[i].completionTime - process[i].arrival;
   }
   return sum / pidCount;
+}
+
+// Returns the CPU usage in percentage form
+double RR::cpuUseQuery() {
+  return ((double)burstCounter / (double)timeCounter) * 100;
 }

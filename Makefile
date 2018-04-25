@@ -1,11 +1,11 @@
-#Author Alex Runciman
-#Makefile for projectt 2
+# Author Alex Runciman
+# Makefile for project 2
 CC = g++
 CFLAGS = -c -Wall
 all: schedsim
 
 schedsim: main.o FCFS.o RR.o SRTF.o scheduler.o
-	$(CC) main.o FCFS.o SRTF.o scheduler.o -o schedsim
+	$(CC) main.o FCFS.o RR.o SRTF.o scheduler.o -o schedsim
 
 scheduler.o: scheduler.h scheduler.cpp
 	$(CC) $(CFLAGS) scheduler.cpp
