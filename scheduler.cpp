@@ -26,6 +26,8 @@ void Scheduler::parseInputFile() {
       pidVal,
       true,
       arrivalVal,
+      burstVal,
+      0,
       burstVal
     };
     process.push_back(tempProcess);
@@ -35,7 +37,7 @@ void Scheduler::parseInputFile() {
   inFile.close();
 
   cout << "Total " << pidCount << " tasks are read from "
-      << inputFile << ". Press 'enter' to start..."
+      << inputFile << ". Press 'enter' to start..." << endl
       << "==========================================" << endl;
   cin.ignore();
 }
@@ -54,7 +56,7 @@ void Scheduler::printProcessResult() {
   cout << "==========================================" << endl;
   cout << "CPU usage : " << cpuUsageQuery() << "%"<< endl;
   cout << "Average wait time : " << avgWaitQuery() << endl;
-  cout << "Average resopnse time : " << avgRespQuery() << endl;
+  cout << "Average response time : " << avgRespQuery() << endl;
   cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;
   cout << "==========================================" << endl;
 }

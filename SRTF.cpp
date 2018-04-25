@@ -6,11 +6,11 @@ void SRTF::runScheduler()
   for (int i = 0; i < pidCount; i++){
     rt.push_back(process[i].burst);
   }
- 
+
   int complete = 0, min = MAX;
   int shortest = 0, finishTime;
   bool check = false;
- 
+
     // Process until all processes gets completed
   while (complete != pidCount) {
     for (int j = 0; j < pidCount; j++) {
@@ -32,7 +32,7 @@ void SRTF::runScheduler()
     if (rt[shortest] == 0) {
       complete++;
       finishTime = timeCounter + 1;
-      cout << "<system time " << finishTime << "> process " << (shortest+1) 
+      cout << "<system time " << finishTime << "> process " << (shortest+1)
         << " is finished..." << endl;
       waitTime[shortest] = finishTime - process[shortest].burst -
         process[shortest].arrival;

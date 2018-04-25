@@ -13,6 +13,8 @@ struct processInfo {
   bool state;
   int arrival;
   int burst;
+  int completionTime;
+  int timeRemaining;
 };
 
 class Scheduler {
