@@ -6,18 +6,29 @@
 2. Round Robin (RR)
 3. Shortest Remaining Time First (SRTF)
 
-FCFS and SRTF can use the same parse function. RR must use a different parse function that accounts for the time quantum.
+This program reads in a file of PID numbers, arrival times and burst times for a list of processes to be simulated. The output is printed to the console. `input.1` is a sample test file.
 
-Compute average waiting time, response time, turnaround time and overall CPU usage for scheduler.
+```
+./a.out input.1 FCFS
+```
+
+RR requires a time quantum to be entered in the command.
+```
+./a.out input.1 RR 10
+```
+
+Average waiting time, response time, turnaround time and overall CPU usage is printed to the console after the scheduler has completed.
 
 Scheduler is an abstract class for FCFS, RR and SRTF.
 
 ###### Strengths:
-This program can successfully simulate the FCFS, RR and SRTF scheduling algorithms. It reads in a file of PID numbers, arrival times and burst times for a list of processes to be simulated. The output is printed to the console
+Proper use of an abstract class (scheduler) containing pure virtual functions and derived classes properly to implement virtual function bodies. This program can successfully simulate the FCFS, RR and SRTF scheduling algorithms.
 
 ###### Weaknesses:
-Calculations for RR averages are slightly off.
+SRTF response time function was unable to be created successfully and therefore will always return 0.
 
 ###### Team Members:
-- Alex Runciman (@agrsu) - Implemented FCFS, implemented SRTF, wrote parseInputFile function, wrote makefile
-- Dante Monaldo (@dmonaldo) - Implemented RR, parsed command line arguments, wrote README
+- Alex Runciman (@agrsu) - Implemented FCFS, implemented SRTF, implemented the majority of scheduler, wrote parseInputFile function,
+wrote makefile, wrote part of main
+- Dante Monaldo (@dmonaldo) - Implemented RR, implemented part of scheduler, parsed command line arguments, wrote README,
+wrote part of main
