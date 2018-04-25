@@ -13,10 +13,10 @@ Compute average waiting time, response time, turnaround time and overall CPU usa
 Scheduler is an abstract class for FCFS, RR and SRTF.
 
 ###### Strengths:
-
+This program can successfully simulate the FCFS, RR and SRTF scheduling algorithms. It reads in a file of PID numbers, arrival times and burst times for a list of processes to be simulated. The output is printed to the console
 
 ###### Weaknesses:
-
+Calculations for RR averages are slightly off.
 
 ###### Team Members:
 - Alex Runciman (@agrsu) - Implemented FCFS, implemented SRTF, wrote parseInputFile function, wrote makefile
