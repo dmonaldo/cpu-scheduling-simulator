@@ -38,7 +38,6 @@ class Scheduler {
     vector<processInfo> process;
     vector<int> waitTime;
     double avgWait;
-    //vector<int> respTime;
     double avgResp;
     vector<int> turnTime;
     double avgTurn;
@@ -47,7 +46,8 @@ class Scheduler {
     int pidCount;
     int timeCounter;
     int burstCounter;
-
+  static const int INC = 1;
+  static const double PERCENT = 100;
 };
 
 #endif

@@ -1,7 +1,9 @@
 #include <iostream>
+#include <stdlib.h>
+#include "SRTF.h"
+#include "FCFS.h"
 #include "scheduler.h"
 #include "RR.h"
-#include "stdlib.h"
 
 using namespace std;
 
@@ -10,11 +12,6 @@ int main(int argc, char *argv[]) {
   string scheduler;
   int timeQuantum;
 
-  /*
-  string commandLine;
-  stringstream iss(commandLine);
-  iss >> inputFile >> scheduler;
-  */
   // Check for minimum arguments to run
   if (argc < 3) {
     cout << "You are missing some arguments." << endl;
@@ -27,22 +24,18 @@ int main(int argc, char *argv[]) {
   // Determine scheduler algorithm to run
   if (scheduler == "FCFS") {
       cout << "Scheduling algorithm: " << scheduler << endl;
-      // Initialize FCFS object here and then print out results
-
+      FCFS fcfsObj(inputFile);
+      fcfsObj.runScheduler();
+      fcfsObj.printProcessResult();
   }
   else if (scheduler == "RR") {
       cout << "Scheduling algorithm: " << scheduler << endl;
-      /*
-      iss >> inputFile >> scheduler >> timeQuantum;
-
-      */
       if (argc < 4) {
         cout << "You are missing the time quantum argument." << endl;
         return 0;
       } else {
         timeQuantum = atoi(argv[3]);
       }
-
       // Run RR Process
       RR RRobj(inputFile, timeQuantum);
       RRobj.runScheduler();
@@ -50,7 +43,10 @@ int main(int argc, char *argv[]) {
   }
   else if (scheduler == "SRTF") {
       cout << "Scheduling algorithm: " << scheduler << endl;
-      // Initialize SRTF object here and then print out results
+      SRTF srtfObj(inputFile);
+      srtfObj.runScheduler();
+      srtfObj.printProcessResult();
+
   }
   else {
       cout << "Invalid scheduler name. Exiting program..." << endl;
