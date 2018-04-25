@@ -15,12 +15,14 @@ void RR::runScheduler() {
     for (int i = 0; i < process.size(); i++) {
       // Run process if arrival time is after current CPU time
       if (process[i].arrival <= timeCounter) {
+        // Run process if the process has not been completed yet
         if (process[i].state) {
           for (int j = 0; j < timeQuantum; j++) {
             timeCounter++;
             burstCounter++;
             process[i].timeRemaining--;
             printRunProcess(process[i].pid);
+            // cout << process[i].arrival << " " << process[i].burst << " " << process[i].timeRemaining << endl << endl;
 
             // Mark process as complete
             if (process[i].timeRemaining <= 0) {
