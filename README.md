@@ -6,6 +6,11 @@
 2. Round Robin (RR)
 3. Shortest Remaining Time First (SRTF)
 
+To get started, run the Makefile
+```
+make
+```
+
 This program reads in a file of PID numbers, arrival times and burst times for a list of processes to be simulated. The output is printed to the console. `input.1` is a sample test file.
 
 ```
