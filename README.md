@@ -8,16 +8,16 @@
 
 FCFS and SRTF can use the same parse function. RR must use a different parse function that accounts for the time quantum.
 
-Compute average waiting time, response time, turnaround time and overall CPU usage for scheduler.
+Compute average waiting time, response time, turnaround time and overall CPU usage for each scheduler after processes have been run.
 
 Scheduler is an abstract class for FCFS, RR and SRTF.
 
 ###### Strengths:
-Using virtual functions to implement functions relating to FCFS, RR, and SRTF
-
+Proper use of an abstract class, scheduler, containing pure virtual functions and derivived classes properly implement these pure 
+virtual functions.
 
 ###### Weaknesses:
-SRTF response time function was unable to be created successfully and so will always output 0.
+SRTF response time function was unable to be created successfully and therefore will always return 0.
 
 ###### Team Members:
 - Alex Runciman (@agrsu) - Implemented FCFS, implemented SRTF, implemented the majority of scheduler, wrote parseInputFile function, 
