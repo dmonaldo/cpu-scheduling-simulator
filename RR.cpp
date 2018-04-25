@@ -54,7 +54,7 @@ void RR::runScheduler() {
 }
 
 // Returns the CPU usage in percentage form
-double RR::cpuUsageQuery() {
+double RR::cpuUseQuery() {
   return ((double)burstCounter / (double)timeCounter) * 100;
 }
 

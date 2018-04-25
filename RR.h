@@ -15,7 +15,7 @@ class RR : public Scheduler {
     double avgRespQuery();
     double avgWaitQuery();
     double avgTurnaroundQuery();
-    double cpuUsageQuery();
+    double cpuUseQuery();
     int timeQuantum;
 };
 #endif

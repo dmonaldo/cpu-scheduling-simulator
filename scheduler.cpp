@@ -7,7 +7,7 @@ Scheduler::Scheduler(string input) {
   avgWait = 0;
   cpuUsage = 0;
   pidCount = 0;
-timerCounter = 0;
+  timeCounter = 0;
 }
 
 void Scheduler::parseInputFile() {
@@ -57,7 +57,7 @@ void Scheduler::printProcessResult() {
   cout << "==========================================" << endl;
   cout.precision(2);
   cout << fixed;
-  cout << "CPU usage : " << cpuUsageQuery() << " %"<< endl;
+  cout << "CPU usage : " << cpuUseQuery() << " %"<< endl;
   cout << "Average wait time : " << avgWaitQuery() << endl;
   cout << "Average response time : " << avgRespQuery() << endl;
   cout << "Average turnaround time : " << avgTurnaroundQuery() << endl;

@@ -1,19 +1,23 @@
+//AUTHOR: Alex Runciman
+//FILENAME: SRTF.cpp
+//DESCRIPTION: Implementation of SRTF.h
 
+#include "SRTF.h"
 void SRTF::runScheduler()
 {
   parseInputFile();
   vector<int> rt; //remaining time
 
   for (int i = 0; i < pidCount; i++){
-    watTime.push_back(0);
     rt.push_back(process[i].burst);
+    waitTime.push_back(-INC);
   }
-
+ 
   int complete = 0, min = MAX;
   int shortest = 0, finishTime;
   bool check = false;
 
-    // Process until all processes gets completed
+  //Process until all processes gets completed
   while (complete != pidCount) {
     for (int j = 0; j < pidCount; j++) {
       if ((process[j].arrival <= timeCounter) &&
@@ -23,7 +27,7 @@ void SRTF::runScheduler()
         check = true;
       }
     }
-    printRunProcess(shortest+INC);
+    printRunProcess(shortest+1);
     if(check == false) {
       timeCounter++;
     }
@@ -34,7 +38,7 @@ void SRTF::runScheduler()
     if (rt[shortest] == 0) {
       complete++;
       finishTime = timeCounter + 1;
-      cout << "<system time " << finishTime << "> process " << (shortest+INC)
+      cout << "<system time " << finishTime << "> process " << (shortest+1) 
         << " is finished..." << endl;
       waitTime[shortest] = finishTime - process[shortest].burst -
         process[shortest].arrival;
